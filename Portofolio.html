@@ -10,12 +10,39 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
+  </style>
+
 <title></title>
 </head>
 
-<body>
+<body id="home">
     <!--NAVBAR START-->
-    <nav class="navbar navbar-expand-lg shadow p3" style="background-color: greenyellow">
+    <nav class="navbar navbar-expand-lg shadow p3 fixed-top" style="background-color: greenyellow">
         <div class="container">
           <a class="navbar-brand" href="#">Yahalo</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +51,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Portofolio.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
@@ -41,6 +68,34 @@
         </div>
       </nav>
       <!--NAVBAR END-->
+
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<div style="background-color:black;color:white;padding:30px">Scroll Down</div>
+<div style="background-color:lightgrey;padding:30px 30px 2500px">This example demonstrates how to create a "scroll to top" button that becomes visible 
+  <strong>when the user starts to scroll the page</strong>.</div>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 
       <!--Jumbotron start-->
       <section class="jumbotron text-center">
@@ -64,11 +119,11 @@
         </div>
       </div>
       <div class="row justify-content-center fs-5 text-center">
-        <div class="col-4">
+        <div class="col-md-4">
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, iure facilis necessitatibus eligendi eaque quaerat expedita amet modi quis odio laudantium iusto assumenda repudiandae earum sit. Quia dolorum ipsum nostrum.
             </p>
           </div>
-        <div class="col-4">
+        <div class="col-md-4">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil qui harum maxime recusandae, modi assumenda natus deleniti? Repellendus optio molestias aliquid assumenda architecto, ipsum, blanditiis quidem aperiam veritatis ducimus nobis.
           </p>
           </div>
@@ -83,7 +138,7 @@
 <!--Project-->
     <section id="project">
       <div class="container">
-         <div class="row text-center">
+         <div class="row text-center mb-3">
            <div class="col">
              <h2>My Project</h2>
            </div>
@@ -141,8 +196,53 @@
            </div>
          </div>
       </div>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#fff" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,138.7C384,149,480,203,576,224C672,245,768,235,864,213.3C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
     </section>
 <!--Project-->
+
+<!--Contact-->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h2>Contact ME</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="email" class="form-control" id="name" aria-describedby="name" placeholder="Juned SK8 Mavia gengs">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="2164763@gmail.com">
+              </div>
+              <div class="mb-3">
+                <label for="pesan" class="form-label">pesan</label>
+                <textarea class="form-control" id="pesan" rows="3" placeholder="'shut your freakin' mouth"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+<!--Contact end-->
+
+    <div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </div>
+
+    <footer>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#b1ff14" fill-opacity="1" d="M0,288L1440,288L1440,320L0,320Z"></path>
+      </svg>
+    </footer>
 
 </body>
 
